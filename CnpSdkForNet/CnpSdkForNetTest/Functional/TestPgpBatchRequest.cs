@@ -455,6 +455,7 @@ namespace Cnp.Sdk.Test.Functional
                 while (authorizationResponse != null)
                 {
                     Assert.AreEqual("000", authorizationResponse.response);
+                    Assert.NotNull(authorizationResponse.visaDcapIndicator);
 
                     authorizationResponse = cnpBatchResponse.nextAuthorizationResponse();
                 }
@@ -584,6 +585,7 @@ namespace Cnp.Sdk.Test.Functional
                 while (saleResponse != null)
                 {
                     Assert.AreEqual("000", saleResponse.response);
+                    Assert.NotNull(saleResponse.visaDcapIndicator);
 
                     saleResponse = cnpBatchResponse.nextSaleResponse();
                 }

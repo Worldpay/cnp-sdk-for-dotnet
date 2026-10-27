@@ -60,6 +60,9 @@ namespace Cnp.Sdk.Test.Certification
             card.expDate = "0121";
             card.cardValidationNum = "349";
             authorization.card = card;
+            fraudCheckType fraudCheck = new fraudCheckType();            
+            fraudCheck.eci = "02";
+            authorization.cardholderAuthentication = fraudCheck;
 
             authorizationResponse response = cnp.Authorize(authorization);
             Assert.AreEqual("000", response.response);

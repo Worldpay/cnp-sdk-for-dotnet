@@ -2203,6 +2203,7 @@ namespace Cnp.Sdk
         private bool authenticatedByMerchantField;
         private bool authenticatedByMerchantSet;
         private string tokenAuthenticationValue;
+        public string eci;
         public bool authenticatedByMerchant
         {
             get { return authenticatedByMerchantField; }
@@ -2218,6 +2219,7 @@ namespace Cnp.Sdk
             if (authenticatedByMerchantSet) xml += "\r\n<authenticatedByMerchant>" + authenticatedByMerchantField + "</authenticatedByMerchant>";
             if (authenticationProtocolVersionType != null) xml += "\r\n<authenticationProtocolVersionType>" + authenticationProtocolVersionType + "</authenticationProtocolVersionType>";
             if (tokenAuthenticationValue != null) xml += "\r\n<tokenAuthenticationValue>" + tokenAuthenticationValue + "</tokenAuthenticationValue";
+            if (eci != null) xml += "\r\n<eci>" + eci + "</eci>";
             return xml;
         }
     }

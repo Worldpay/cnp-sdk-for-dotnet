@@ -29,7 +29,7 @@ namespace Cnp.Sdk.Test.Functional
                 card = new cardType
                 {
                     type = methodOfPaymentTypeEnum.VI,
-                    number = "4100000000000000",
+                    number = "4100000000001234",
                     expDate = "1210"
                 },
                 enhancedData = new enhancedData
@@ -53,6 +53,7 @@ namespace Cnp.Sdk.Test.Functional
 
             var responseObj = _cnp.Sale(saleObj);
             StringAssert.AreEqualIgnoringCase("Approved", responseObj.message);
+            Assert.AreEqual("2", responseObj.visaDcapIndicator);
         }
         
         [Test]
@@ -306,6 +307,32 @@ namespace Cnp.Sdk.Test.Functional
                     /// base64 value for dummy number '123456789012345678901234567890123456789012345678901234567890'
                     /// System should accept the request with length 60 of authenticationValueType
                     authenticationValue = "MTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkw",
+                }
+            };
+
+            var responseObj = _cnp.Sale(saleObj);
+            StringAssert.AreEqualIgnoringCase("Approved", responseObj.message);
+        }
+
+        [Test]
+        public void SimpleSaleWithFraudCheckEci02()
+        {
+            var saleObj = new sale
+            {
+                id = "1",
+                amount = 106,
+                cnpTxnId = 123456,
+                orderId = "12344",
+                orderSource = orderSourceType.ecommerce,
+                card = new cardType
+                {
+                    type = methodOfPaymentTypeEnum.VI,
+                    number = "4100000000000000",
+                    expDate = "1210"
+                },
+                cardholderAuthentication = new fraudCheckType
+                {
+                    eci = "02"
                 }
             };
 

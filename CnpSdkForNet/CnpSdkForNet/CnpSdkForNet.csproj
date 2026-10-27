@@ -3,19 +3,19 @@
         <TargetFramework>netstandard2.0</TargetFramework>
         <SignAssembly>true</SignAssembly>
         <AssemblyOriginatorKeyFile>dotNetSDKKey.snk</AssemblyOriginatorKeyFile>
-        <PackageVersion>12.27.1</PackageVersion>
+        <PackageVersion>12.27.2</PackageVersion>
         <Title>Vantiv.CnpSdkForNet</Title>
-        <Authors>FIS</Authors>
-        <Copyright>Copyright © FIS 2020</Copyright>
+        <Authors>Worldpay</Authors>
+        <Copyright>Copyright © Worldpay 2020</Copyright>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>Vantiv.CnpSdkForNet</PackageId>
-        <Description>.NET implementation of FIS eCommerce XML spec</Description>
-        <PackageProjectUrl>https://github.com/Vantiv/cnp-sdk-for-dotnet</PackageProjectUrl>
+        <Description>.NET implementation of Worldpay eCommerce XML spec</Description>
+        <PackageProjectUrl>https://github.com/Worldpay/cnp-sdk-for-dotnet</PackageProjectUrl>
         <PackageLicenseUrl></PackageLicenseUrl>
-        <PackageTags>Vantiv FIS eCommerce Payments</PackageTags>
+        <PackageTags>Vantiv Worldpay eCommerce Payments</PackageTags>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
-        <RepositoryUrl>https://github.com/Vantiv/cnp-sdk-for-dotnet.git</RepositoryUrl>
-        <PackageReleaseNotes>https://github.com/Vantiv/cnp-sdk-for-dotnet/blob/12.x/CHANGELOG</PackageReleaseNotes>
+        <RepositoryUrl>https://github.com/Worldpay/cnp-sdk-for-dotnet.git</RepositoryUrl>
+        <PackageReleaseNotes>https://github.com/Worldpay/cnp-sdk-for-dotnet/blob/12.x/CHANGELOG</PackageReleaseNotes>
         <RepositoryType>git</RepositoryType>
     </PropertyGroup>
 
