@@ -26,6 +26,17 @@ namespace Cnp.Sdk.Test.Unit
             Assert.NotNull(authorizationResponse.giftCardResponse);
         }
 
+        [Test]
+        public void TestAuthorizationResponseContainsVisaDcapIndicator()
+        {
+            String xml = "<authorizationResponse xmlns=\"http://www.vantivcnp.com/schema\"><visaDcapIndicator>DCAP</visaDcapIndicator></authorizationResponse>";
+            XmlSerializer serializer = new XmlSerializer(typeof(authorizationResponse));
+            StringReader reader = new StringReader(xml);
+            authorizationResponse authorizationResponse = (authorizationResponse)serializer.Deserialize(reader);
+
+            Assert.AreEqual("DCAP", authorizationResponse.visaDcapIndicator);
+        }
+
         // CES: Commenting this out because AuthReversal no longer uses giftCardResponse
         
         /*
@@ -131,6 +142,17 @@ namespace Cnp.Sdk.Test.Unit
             saleResponse saleResponse = (saleResponse)serializer.Deserialize(reader);
 
             Assert.NotNull(saleResponse.giftCardResponse);
+        }
+
+        [Test]
+        public void TestSaleResponseContainsVisaDcapIndicator()
+        {
+            String xml = "<saleResponse xmlns=\"http://www.vantivcnp.com/schema\"><visaDcapIndicator>DCAP</visaDcapIndicator></saleResponse>";
+            XmlSerializer serializer = new XmlSerializer(typeof(saleResponse));
+            StringReader reader = new StringReader(xml);
+            saleResponse saleResponse = (saleResponse)serializer.Deserialize(reader);
+
+            Assert.AreEqual("DCAP", saleResponse.visaDcapIndicator);
         }
 
         // Gift card response is now its own class

@@ -45,6 +45,35 @@ namespace Cnp.Sdk.Test.Functional
         }
 
         [Test]
+        public void SimpleAuthWithFraudCheckEci02()
+        {
+            var authorization = new authorization
+            {
+                id = "1",
+                reportGroup = "Planets",
+                orderId = "12344",
+                amount = 106,
+                orderSource = orderSourceType.ecommerce,
+                card = new cardType
+                {
+                    type = methodOfPaymentTypeEnum.VI,
+                    number = "414100000000001234",
+                    expDate = "1210"
+                },
+                cardholderAuthentication = new fraudCheckType
+                {
+                    eci = "02"
+                },
+                customBilling = new customBilling { phone = "1112223333" }
+            };
+
+            var response = _cnp.Authorize(authorization);
+
+            Assert.AreEqual("000", response.response);
+            Assert.AreEqual("2", response.visaDcapIndicator);
+        }
+
+        [Test]
         public void SimpleAuthWithMasterCard()
         {
             var authorization = new authorization

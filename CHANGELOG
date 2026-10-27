@@ -1,6 +1,10 @@
 
 = Worldpay CNP CHANGELOG
 
+==Version 12.27.2 (October 28, 2026)
+* Change:  [cnpAPI v12.27] Added new element `eci` in `fraudCheckType` to support `cardholderAuthentication` for `authorization`/`sale`.
+* Change:  [cnpAPI v12.27] Added new element `visaDcapIndicator` in `authorization`/`sale` Response.
+
 ==Version 12.27.1 (October 09, 2024)
 * Change:  Enhanced de-serialization to handle error responses due to gateway-timeout
 

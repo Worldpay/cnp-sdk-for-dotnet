@@ -2162,6 +2162,8 @@ namespace Cnp.Sdk
 
         private string checkoutIdField;
 
+        private string visaDcapIndicatorField;
+
         /// <remarks/>
         public long cnpTxnId
         {
@@ -2526,6 +2528,18 @@ namespace Cnp.Sdk
             set
             {
                 this.checkoutIdField = value;
+            }
+        }
+
+        public string visaDcapIndicator
+        {
+            get
+            {
+                return this.visaDcapIndicatorField;
+            }
+            set
+            {
+                this.visaDcapIndicatorField = value;
             }
         }
     }
@@ -4332,6 +4346,8 @@ namespace Cnp.Sdk
         private string paymentAccountReferenceNumberField;
 
         private string checkoutIdField; //12.24
+
+        private string visaDcapIndicatorField;
         
         /// <remarks/>
         public long cnpTxnId
@@ -4780,6 +4796,18 @@ namespace Cnp.Sdk
             set
             {
                 this.checkoutIdField = value;
+            }
+        }
+
+        public string visaDcapIndicator
+        {
+            get
+            {
+                return this.visaDcapIndicatorField;
+            }
+            set
+            {
+                this.visaDcapIndicatorField = value;
             }
         }
     }
